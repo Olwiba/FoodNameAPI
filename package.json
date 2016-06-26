@@ -1,0 +1,29 @@
+{
+  "name": "api-spike",
+  "version": "1.0.0",
+  "description": "## Release 0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kea-2016/api-spike.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kea-2016/api-spike/issues"
+  },
+  "homepage": "https://github.com/kea-2016/api-spike#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "hbs": "^4.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.2"
+  }
+}
