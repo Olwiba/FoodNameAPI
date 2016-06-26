@@ -21,6 +21,6 @@
 ## Release 3
 
 1. learn about testing with supertest
-1. write soem tests for your API to ensure you know how to use supertest
+1. write some tests for your API to ensure you know how to use [supertest](https://www.npmjs.com/package/supertest)
 1. throw your spike away (this project), and make yor first stable API using the steps in repo : `api-from-scratch`
 
