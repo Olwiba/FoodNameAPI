@@ -9,22 +9,19 @@
 <script type="text/javascript">
   function myFunc() {
     var foodInput = $('#foodCategory').val()
-    // console.log('hey, its working!')
-    // $('.content').append(foodInput)
-
-  $.ajax('/food/' + foodInput, {
-    success: function (foods) {
-      // food is the response data
-      foods.forEach(function (name) {
-        $('.content').append('<li>' + name + '</li>')
-      })
-    },
-    error: function (jqxhr) {
-      // jqxhr is the XMLHTTPResponse object
-      $('.content').text('Error: ' + jqxhr.responseText)
-    }
-  })
-}
+    $.ajax('/food/' + foodInput, {
+      success: function (foods) {
+        // food is the response data
+        foods.forEach(function (name) {
+          $('.content').append('<li>' + name + '</li>')
+        })
+      },
+      error: function (jqxhr) {
+        // jqxhr is the XMLHTTPResponse object
+        $('.content').text('Error: ' + jqxhr.responseText)
+      }
+    })
+  }
  //  var test = document.getElementById('foodCategory').innerHTML
  //  console.log('the function is working')
  //  }
