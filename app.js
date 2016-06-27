@@ -6,6 +6,7 @@ var food = require('./routes/food')
 
 var app = express()
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use('/food', food)
 app.set('view engine', 'hbs')
 app.set('views path', path.join(__dirname, 'views'))

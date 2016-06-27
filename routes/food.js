@@ -1,9 +1,7 @@
 var express = require('express')
 var path = require('path')
-var bodyParser = require('body-parser')
 
 var app = express()
-app.use(bodyParser.json())
 
 var testData = {
     "breakfast": ["toast", "pancakes", "cornflakes", "banana", "porridge"],
@@ -15,15 +13,21 @@ app.get('/', function (req, res) {
   res.send(testData);
 });
 
-app.get('/:class', function (req, res) {
-  var foodClass = req.params.class
-  res.send(testData[foodClass]);
+app.get('/:category', function (req, res) {
+  var foodCategory = req.params.category
+  res.send(testData[foodCategory]);
 });
 
-app.get('/:class/add', function (req, res) {
-  var foodClass = req.params.class
-  res.render('add')
-  // res.send(testData['breakfast']);
+
+app.post('/:category', function (req, res) {
+  var foodCategory = req.params.category
+  testData[foodCategory].push(req.body.foodName)
+  res.redirect('/food/' + foodCategory)
+});
+
+app.get('/:category/add', function (req, res) {
+  var foodCategory = req.params.category
+  res.render('add', req.params)
 });
 
 
