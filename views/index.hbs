@@ -1,0 +1,34 @@
+<h1>The food page page</h1>
+<h2>Please enter the time of day: </h2>
+  <input type='text' id="foodCategory" placeholder='enter food here'/>
+  <button onclick='myFunc()'>Add Food</button>
+
+  <ul class='content'></ul>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script type="text/javascript">
+  function myFunc() {
+    var foodInput = $('#foodCategory').val()
+    // console.log('hey, its working!')
+    // $('.content').append(foodInput)
+
+  $.ajax('/food/' + foodInput, {
+    success: function (foods) {
+      // food is the response data
+      foods.forEach(function (name) {
+        $('.content').append('<li>' + name + '</li>')
+      })
+    },
+    error: function (jqxhr) {
+      // jqxhr is the XMLHTTPResponse object
+      $('.content').text('Error: ' + jqxhr.responseText)
+    }
+  })
+}
+ //  var test = document.getElementById('foodCategory').innerHTML
+ //  console.log('the function is working')
+ //  }
+
+</script>
+
+
