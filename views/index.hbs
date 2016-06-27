@@ -11,6 +11,7 @@
     var foodInput = $('#foodCategory').val()
     $.ajax('/food/' + foodInput, {
       success: function (foods) {
+        console.log(typeof foods)
         // food is the response data
         foods.forEach(function (name) {
           $('.content').append('<li>' + name + '</li>')
@@ -22,9 +23,7 @@
       }
     })
   }
- //  var test = document.getElementById('foodCategory').innerHTML
- //  console.log('the function is working')
- //  }
+
 
 </script>
 

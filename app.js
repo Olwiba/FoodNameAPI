@@ -12,7 +12,7 @@ app.set('view engine', 'hbs')
 app.set('views path', path.join(__dirname, 'views'))
 
 app.get('/', function (req, res) {
-  res.send('welcome');
+  res.render('index');
 });
 
 app.listen(3000, function () {

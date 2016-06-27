@@ -21,6 +21,7 @@ app.get('/:category', function (req, res) {
 
 app.post('/:category', function (req, res) {
   var foodCategory = req.params.category
+  console.log( req.body)
   testData[foodCategory].push(req.body.foodName)
   res.redirect('/food/' + foodCategory)
 });
